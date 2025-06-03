@@ -4,16 +4,17 @@ from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime, timedelta
 import time
 from threading import Thread
+import os  # NEW: For using secret file path
 
 app = Flask(__name__)
 
 # === Google Sheet Setup ===
+SERVICE_ACCOUNT_FILE = "/etc/secrets/credentials.json"  # 🔐 Use Render's secret file path
 scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
 ]
-client = gspread.service_account(filename='google_creds.json', scopes=scope)
-client = gspread.service_account(filename='google_creds.json')
+client = gspread.service_account(filename=SERVICE_ACCOUNT_FILE)  # ✅ Secure way on Render
 sheet = client.open("StudyPlusData").sheet1
 
 # === Memory Storage ===
