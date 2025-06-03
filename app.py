@@ -17,8 +17,6 @@ scope = [
 client = gspread.service_account(filename=SERVICE_ACCOUNT_FILE)  # ✅ Secure way on Render
 sheet = client.open("StudyPlusData").sheet1
 
-# === Memory Storage ===
-user_sessions = {}
 
 
 # === Rank System ===
