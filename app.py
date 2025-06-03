@@ -443,6 +443,15 @@ def pending_task():
 
     return f"✅ {username} , you have no pending tasks! Use `!task Your Task` to add one."
 
+@app.route("/ping")
+def home():
+    return "✅ Sunnie-BOT is alive!"
+
+@app.route("/ping")
+def ping():
+    return "🟢 Ping OK"
+
+
 
 # === Run Server ===
 if __name__ == "__main__":
