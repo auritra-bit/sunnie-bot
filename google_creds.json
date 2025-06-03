@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "studyplusdata",
+  "private_key_id": "6f93bd1cd046baa2c729867a207fc13eb3c7a53c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDHkY6fMbpO8Guw\nKWh8ZA7mY0cFtS33xtrw+zo1TGvv8hvtECLP9dpwTwIeCnuvxYSqCmEbdRj4xlKQ\nWxD8LL2L3wtcJyyySjgnOpaxd/o2lbvWZN/RtDeD0ayMxd8pHDEhJ/idB6Jx1s1P\nXlpM5KfiYZari9siRecoHghrSS/VUoM9OabawTe9EnJ2rbdVX4Gze2oRzdEVGI0R\np+ytBMvqfrnTqBpIsSGfndhvmqdzI939CdDVOH1XSETsGSuVMfiZPxYXgG16ThUg\n7rR9q5FYXPYddr0qfpHFi6k6uqhqFVZnCz3FVpVMJ9bwTkoE5fqngBTwudl6frfo\n69wLBJZpAgMBAAECggEACIC03yb+/VyEdg+5li0sLlg1/zICOJ+WFfTaPMmaArHh\nyzaoCQy8RxMyr6V6Mhm8BoOlMgaJ7xWCEIj0vw3H8KTq5rz7jEgZvuAh6gNG25sD\nEwYevCBNyjW9gIzwrl93X2aE0unvm6KPgk1ukv6eAYjvYrU1e68XQ3AOI0YNveyv\n+toWbMbIE8RQ1f4S1g37WYQo6eAigl5v9sUA7lb2Dh5vYt8u8YppqTEn3BhuGprj\nA/G9NJDoirxmE+qDmhC3FtIFciGoVl1WAgg5xkwJi46yYyFVMhiBVJu6uHqELs7H\nw2BI3n9+4O+2zQJnoDiKL5H6/eujy0uIEN6BgpEwIQKBgQD2AflRyzsnA1WEgSKo\nso8eo/eovSEkVupHyCxjVesvxDYBMK+W0V6SYsTKXlvS6UhrzTVvoryIH5HDEOJ1\noKkI5FUWPaEwxYWbgybZT/YveOgZgANKJX+vuVxarHl/J1iOIOlOZe1CTEab0JxX\n50h5gMyBNcioE3HNmRyq17m7+QKBgQDPrLO2R3/vn6/mtf4iW95at7pbxDOeaszx\nN+HtYUli1ztbql4jLdovX8uwAE2v+hmkNwyXFBTCb3A0N+Vo6W9pXasO2ZxEG4Ur\nQ1CMoKwo6BNLPuImFOgyyVHo4kJ5y/1AXQx7WIB2X0opnWsnk/Bk1YwgA2esN41U\nQoJCRP3p8QKBgQC6KIo7TBgqEIrRJ0tL7zsAS8HobZ47uo203hRA406Cqe7X/biR\n30O6cIVMQhUoSCHmebYbEUGrnIAX5ZoIuxfOw8JjfyWQG5hcMuXeAnVgPRUd3tIe\ndLvoBNOPRf72qpaHjv4dtmHRDplL5ZO5rSoZz85xZHrAPV6b32ZjHbXOOQKBgQDD\nRZmpwKtMbrOgVOoD9qwqUu25UdBTmgrgmfInGb4+YTEgLR7dJ0UsHIBTGsXxvVIU\n9eoxuKEYfl5by187+ZtX0MqCaR2lcNcT6fS4dm/K+wUBULymoCwBbQlG2FE3Yxbb\nSWLuLDaGl20NmkZibZmxxpY+l9UIuyd53hvLIkI6kQKBgQCBPVhU12BwV740l5Ff\ndtF7ygFg+LZFkYBZeMnKudHRQiGQHWb4RTeJZAw2TwCmBM1kSckIZ8lFPqtMKl6r\nSHaeh9mn9cJmFDWVL05+6PeMuw0Lv/h7XwT0Nai33QQqiVp4TSYX1lHt3e3b1V6c\nI/Ke3Hzce8rl75hqWIfWZEo2gQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "studyplusdata@studyplusdata.iam.gserviceaccount.com",
+  "client_id": "106833815417076094138",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/studyplusdata%40studyplusdata.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
