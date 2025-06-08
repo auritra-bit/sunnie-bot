@@ -108,20 +108,20 @@ def attend():
     return f"✅ {username}, your attendance is logged and you earned 10 XP! 🔥 Daily Streak: {streak} days."
 
 
-# ✅ !start
 @app.route("/start")
 def start():
     username = request.args.get('user')
     userid = request.args.get('id')
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Check if a session is already running (no stop yet)
     records = sheet.get_all_records()
+
+    # Check if a session is already running (not marked as completed)
     for row in reversed(records):
         if str(row['UserID']) == str(userid) and row['Action'] == 'Session Start':
             return f"⚠️ {username} , you already started a session. Use `!stop` before starting a new one."
 
-    # Log a new session start
+    # Log new session start
     sheet.append_row([username, userid, now, "Session Start", "0", "", "", ""])
     return f"⏱️ {username} , your study session has started! Use `!stop` to end it. Happy studying 📚"
 
@@ -136,15 +136,16 @@ def stop():
 
     records = sheet.get_all_records()
 
-    # Find latest session start
+    # Find the latest unmarked "Session Start"
     session_start = None
     row_index = None
     for i in range(len(records) - 1, -1, -1):
         row = records[i]
-        if str(row['UserID']) == str(userid) and row['Action'] == 'Session Start':
+        if (str(row['UserID']) == str(userid) and
+            row['Action'] == 'Session Start'):
             try:
                 session_start = datetime.strptime(row['Timestamp'], "%Y-%m-%d %H:%M:%S")
-                row_index = i + 2  # for updating that row if needed
+                row_index = i + 2  # For updating that row
                 break
             except ValueError:
                 continue
@@ -152,11 +153,11 @@ def stop():
     if not session_start:
         return f"⚠️ {username} , you didn't start any session. Use `!start` to begin."
 
-    # Calculate duration
+    # Calculate duration and XP
     duration_minutes = int((now - session_start).total_seconds() / 60)
     xp_earned = duration_minutes * 2
 
-    # Add final study session row
+    # Log the study session
     sheet.append_row([
         username, userid,
         now.strftime("%Y-%m-%d %H:%M:%S"),
@@ -166,15 +167,14 @@ def stop():
         f"{duration_minutes} min"
     ])
 
-    # Optionally: remove the "Session Start" row or mark it
+    # Mark the "Session Start" as completed
     sheet.update_cell(row_index, 4, "Session Start ✅")
 
-    # Check badge
+    # Badge check
     badges = get_badges(duration_minutes)
-    badge_message = f" 🎖 {username} , you unlocked a badge: {badges[-1]}! keep it up" if badges else ""
+    badge_message = f" 🎖 {username} , you unlocked a badge: {badges[-1]}! Keep it up!" if badges else ""
 
     return f"👩🏻‍💻📓✍🏻 {username} , you studied for {duration_minutes} minutes and earned {xp_earned} XP.{badge_message}"
-
 
 
 # ✅ !rank
