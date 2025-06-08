@@ -468,6 +468,30 @@ def pending_task():
 
     return f"✅ {username} , you have no pending tasks! Use `!task Your Task` to add one."
 
+# ✅ !comtask
+@app.route("/comtask")
+def completed_tasks():
+    username = request.args.get('user')
+    userid = request.args.get('id')
+
+    records = sheet.get_all_records()
+    completed = []
+
+    # Go from most recent to oldest
+    for row in reversed(records):
+        if str(row['UserID']) == str(userid) and str(row['Action']).startswith("Task:") and "✅ Done" in row['Action']:
+            task_name = row['Action'][6:].replace("✅ Done", "").strip()
+            completed.append(task_name)
+            if len(completed) == 3:
+                break
+
+    if not completed:
+        return f"📭 {username} , you haven't completed any tasks yet. Use `!task` to add one."
+
+    task_list = "\n".join([f"{i+1}. {task}" for i, task in enumerate(completed)])
+    return f"✅ {username} , here are your last 3 completed tasks:\n{task_list}"
+
+
 @app.route("/ping")
 def home():
     return "✅ Sunnie-BOT is alive!"
